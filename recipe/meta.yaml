@@ -7,21 +7,20 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hatch_regex_commit-{{ version }}.tar.gz
   sha256: fa6e4b221dd8d667901c86e6357716580d278c5bba6c9343e4768c1aeb0e9b38
-  patches:
-    - pyproject.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - hatchling >=0.21.0
+    - hatchling
+    - hatch-regex-commit
     - pip
     - python >=3.7
   run:
-    - hatchling >=0.21.0
+    - hatchling
     - python >=3.7
 
 test:
